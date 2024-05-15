@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const BASE_URL = "https://jobly-backend-2h4d.onrender.com/"
+const BASE_URL = "https://jobly-backend-2h4d.onrender.com"
 
 
 /** API Class.
