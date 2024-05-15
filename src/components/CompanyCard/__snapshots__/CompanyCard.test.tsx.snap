@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompanyCard passes the snapshot test 1`] = `
+<DocumentFragment>
+  <div
+    class="company-card flex-row m-2 card"
+    style="cursor: pointer;"
+  >
+    <div
+      class="col-10 card-body"
+    >
+      <div
+        class="h-100 d-flex flex-column justify-content-between"
+      >
+        <div>
+          <h5
+            class="card-title"
+          >
+            Test Company
+          </h5>
+          <h6
+            class="mb-2 text-muted card-subtitle"
+          >
+            This is a test company.
+          </h6>
+        </div>
+        <p
+          class="card-text"
+        >
+          Employees: 100
+        </p>
+      </div>
+    </div>
+    <div
+      class="container col-2 p-2"
+    >
+      <img
+        alt="Test Company"
+        class="img-fluid"
+        src="https://example.com/logo.png"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
