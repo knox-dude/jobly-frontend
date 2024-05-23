@@ -3,6 +3,7 @@ import NavBar from "../Navbar/NavBar";
 import AppRoutes from "../AppRoutes/AppRoutes";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import CurrUserContext from "../CurrUserContext/CurrUserContext";
+import LoadingComponent from "../AnimatedLoadingText/AnimatedLoadingText";
 import { JoblyApi } from "@/api";
 import { useState, useEffect } from "react";
 import { User } from "@/types";
@@ -100,7 +101,7 @@ function App() {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingComponent loading={loading} />
   }
 
   return (

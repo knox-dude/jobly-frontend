@@ -1,12 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import CurrUserContext from "../CurrUserContext/CurrUserContext";
+import LoadingComponent from "../AnimatedLoadingText/AnimatedLoadingText";
 
 function SignupForm() {
   const navigate = useNavigate();
   // get signup, ignore user, logout, login
   const {signup} = useContext(CurrUserContext);
+  // state for loading once signup is submitted
+  const [loading, setLoading] = useState<boolean>(false);
 
   // get all fields and submit them to function received from CurrUserContext in App
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -22,12 +25,18 @@ function SignupForm() {
         alert('Please fill in all fields');
         throw new Error("not all fields filled in");
       }
+      setLoading(true);
       await signup({username, firstName, lastName, password, email});
     } catch (error) {
       console.error(`error in signup: ${error}`);
       navigate("/signup");
+      setLoading(false);
     }
   };
+
+  if (loading) {
+    return <LoadingComponent loading={loading} />
+  }
 
   return (
     <div className="container">
